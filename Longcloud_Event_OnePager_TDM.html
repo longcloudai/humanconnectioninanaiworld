@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Longcloud — Event Recap</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #0f1b2d;
+    --slate: #47566b;
+    --muted: #6b7a90;
+    --line: #e2e8f2;
+    --brand: #1857c4;
+    --brand-dark: #0e3a8a;
+    --accent: #12b3a6;
+    --wash: #f4f7fc;
+    --gold: #e8a33d;
+  }
+  html, body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { width: 210mm; margin: 0 auto; }
+  .page { width: 210mm; min-height: 297mm; padding: 15mm 15mm 12mm; display: flex; flex-direction: column; }
+
+  /* Header */
+  .top { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--ink); padding-bottom: 10px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .logo { width: 34px; height: 34px; }
+  .brand-name { font-size: 21px; font-weight: 800; letter-spacing: -0.5px; }
+  .brand-name span { color: var(--brand); }
+  .brand-tag { font-size: 9.5px; color: var(--muted); letter-spacing: 2.2px; text-transform: uppercase; margin-top: 2px; }
+  .top-right { text-align: right; }
+  .eyebrow { font-size: 9.5px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--brand); font-weight: 700; }
+  .top-right .date { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+  .lede { margin-top: 14px; }
+  .lede h1 { font-size: 25px; line-height: 1.12; letter-spacing: -0.6px; font-weight: 800; }
+  .lede p { font-size: 11.5px; color: var(--slate); margin-top: 7px; max-width: 155mm; line-height: 1.5; }
+
+  /* Section shells */
+  .sec { margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .sec-head { display: flex; align-items: center; gap: 10px; padding: 11px 16px; background: var(--wash); border-bottom: 1px solid var(--line); }
+  .num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--brand); color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .sec-head .t { font-size: 14.5px; font-weight: 800; letter-spacing: -0.2px; }
+  .sec-head .k { margin-left: auto; font-size: 9px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+
+  /* Talk section */
+  .talk { display: flex; gap: 16px; padding: 15px 16px; align-items: center; }
+  .talk-body { flex: 1; }
+  .talk-title { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; }
+  .talk-by { font-size: 10.5px; color: var(--brand); font-weight: 700; margin-top: 3px; }
+  .talk-body p { font-size: 10.8px; color: var(--slate); line-height: 1.5; margin-top: 8px; }
+  .qr-card { flex: none; width: 118px; text-align: center; border: 1px solid var(--line); border-radius: 10px; padding: 10px 10px 8px; background: #fff; }
+  .qr-card img { width: 96px; height: 96px; display: block; margin: 0 auto; }
+  .qr-card .cta { font-size: 9px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; color: var(--ink); margin-top: 7px; }
+  .qr-card .sub { font-size: 8px; color: var(--muted); margin-top: 2px; line-height: 1.3; }
+
+  /* Case study */
+  .cs { padding: 14px 16px 16px; }
+  .cs-lead { font-size: 15px; font-weight: 800; letter-spacing: -0.3px; }
+  .cs-meta { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 9px; }
+  .chip { font-size: 8.8px; font-weight: 700; color: var(--brand-dark); background: #eaf1fd; border: 1px solid #d5e2fb; border-radius: 20px; padding: 3px 10px; }
+  .cs-intro { font-size: 10.6px; color: var(--slate); line-height: 1.5; margin-top: 10px; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 13px; }
+  .block h4 { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--brand); font-weight: 800; margin-bottom: 6px; }
+  .block ul { list-style: none; }
+  .block li { font-size: 10.2px; color: var(--slate); line-height: 1.42; padding-left: 15px; position: relative; margin-bottom: 5px; }
+  .block li::before { content: ""; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .block li b { color: var(--ink); font-weight: 700; }
+
+  /* Impact strip */
+  .impact { margin-top: 13px; background: var(--ink); border-radius: 10px; padding: 13px 15px; color: #fff; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .impact .i .h { font-size: 10px; font-weight: 800; letter-spacing: 0.2px; }
+  .impact .i .d { font-size: 8.8px; color: #b9c6da; line-height: 1.35; margin-top: 3px; }
+  .impact .i .h .dot { color: var(--gold); }
+
+  .stack { margin-top: 12px; font-size: 9.4px; color: var(--muted); line-height: 1.45; border-top: 1px solid var(--line); padding-top: 9px; }
+  .stack b { color: var(--slate); }
+
+  .foot { margin-top: auto; padding-top: 12px; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: center; }
+  .foot .l { font-size: 10px; color: var(--slate); }
+  .foot .l b { color: var(--ink); }
+  .foot .r { font-size: 9.5px; color: var(--muted); }
+  a { color: var(--brand); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M34 30a8 8 0 0 0-1.4-15.9A11 11 0 0 0 11 17.5 8.5 8.5 0 0 0 13 34h21z" fill="#1857c4"/>
+        <path d="M30 25a6 6 0 0 0-1-11.9A8.2 8.2 0 0 0 13.6 15" stroke="#12b3a6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">Long<span>cloud</span></div>
+        <div class="brand-tag">Software · AI · Digital Platforms</div>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="eyebrow">Event Recap · For Attendees</div>
+      <div class="date">Human Connection in an AI World</div>
+    </div>
+  </div>
+
+  <div class="lede">
+    <h1>Thanks for joining us.</h1>
+    <p>A quick recap of the evening: Nick Foley on what video games teach us about human connection in an AI world, and a live Q&amp;A between Longcloud's Paul Singh and Trent Montgomery, Managing Director of TDM Transport, on the digital platform we built together.</p>
+  </div>
+
+  <!-- SECTION 1: TALK -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="num">1</div>
+      <div class="t">The Talk</div>
+      <div class="k">Keynote</div>
+    </div>
+    <div class="talk">
+      <div class="talk-body">
+        <div class="talk-title">Human Connection in an AI World</div>
+        <div class="talk-by">Nick Foley · Longcloud</div>
+        <p>Drawing on decades of video games as social spaces, Nick explores how the technology that seems to isolate us has, again and again, brought people together — and what that means for building AI that deepens human connection rather than replacing it. Scan the code to open the full presentation on your phone or laptop.</p>
+      </div>
+      <div class="qr-card">
+        <img src="data:image/png;base64,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" alt="QR code to Nick Foley's presentation">
+        <div class="cta">View the deck</div>
+        <div class="sub">Opens in your browser — no download</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Q&A / CASE STUDY -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="num">2</div>
+      <div class="t">The Q&amp;A — TDM Transport</div>
+      <div class="k">Paul Singh × Trent Montgomery</div>
+    </div>
+    <div class="cs">
+      <div class="cs-lead">A digital transformation platform for a Waikato logistics leader</div>
+      <div class="cs-meta">
+        <span class="chip">Transport &amp; Logistics</span>
+        <span class="chip">Waikato, New Zealand</span>
+        <span class="chip">Office portal + driver app</span>
+        <span class="chip">Real-time · one database</span>
+        <span class="chip"><a href="https://www.tdmtransport.co.nz/">tdmtransport.co.nz</a></span>
+      </div>
+      <p class="cs-intro">TDM Transport had grown into a leading Waikato freight and heavy-haulage operator. Rather than wait for the pains of scale to bite, Managing Director Trent Montgomery brought in Longcloud to build a single platform connecting people, vehicles, customers and data in real time — a foundation for the next phase of growth.</p>
+
+      <div class="grid2">
+        <div class="block">
+          <h4>The Challenge</h4>
+          <ul>
+            <li><b>No single view</b> — fleet, jobs, customers and staff lived in separate places.</li>
+            <li><b>Live visibility</b> — fleet and job status had to be pulled together, not seen live.</li>
+            <li><b>Driver-to-office</b> — coordination relied on ad-hoc calls and messages.</li>
+            <li><b>Compliance</b> — vehicle compliance and maintenance needed a structured process as the fleet grew.</li>
+            <li><b>Reporting</b> — performance insight was assembled by hand, not on demand.</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h4>What We Built</h4>
+          <ul>
+            <li><b>Office portal</b> — real-time dispatch calendar plus jobs, CRM, HRIS, fleet, maintenance, fuel &amp; reporting. Microsoft 365 single sign-on, locked to the company domain.</li>
+            <li><b>Driver app</b> — mobile-first; each driver sees only their jobs, submits photo proof of pickup &amp; delivery, and chats live with the office, all tied to the job.</li>
+            <li><b>One real-time database</b> — an office assignment appears on the driver's phone, and a completed delivery back in the office, with no refresh or phone call.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="impact">
+        <div class="i"><div class="h"><span class="dot">▲</span> One live view</div><div class="d">Fleet, drivers, customers and jobs connected in real time.</div></div>
+        <div class="i"><div class="h"><span class="dot">▲</span> Lower risk</div><div class="d">Automated COF, rego &amp; service tracking flags overdue items.</div></div>
+        <div class="i"><div class="h"><span class="dot">▲</span> Faster reporting</div><div class="d">Revenue, pipeline &amp; utilisation on demand; export to Excel.</div></div>
+        <div class="i"><div class="h"><span class="dot">▲</span> Built to scale</div><div class="d">One integrated platform ready for TDM's ongoing growth.</div></div>
+      </div>
+
+      <div class="stack">
+        <b>Under the hood:</b> Next.js 16 (React, App Router) · Supabase PostgreSQL &amp; Storage · Vercel edge hosting. Real-time multi-user sync over WebSockets with optimistic UI; two purpose-built sign-in paths (Microsoft SSO for office, dedicated login for drivers); secure photo proof-of-delivery with a code-enforced "no photos, no completion" rule; and a graceful offline fallback for daily depot use. <b>What's next:</b> AI-assisted scheduling, route &amp; utilisation optimisation, and predictive maintenance.
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="l"><b>Longcloud</b> — we build the software and AI platforms that move businesses forward.</div>
+    <div class="r">Let's talk about what we could build together.</div>
+  </div>
+
+</div>
+</body>
+</html>
