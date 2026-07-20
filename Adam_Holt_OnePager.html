@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Adam Holt · The Colab</title>
 <style>
-  @page { margin: 0; }
+  @page { size: A4; margin: 0; }
   * { margin:0; padding:0; box-sizing:border-box; }
   :root {
     --ink:#20160f; --slate:#5b4f47; --muted:#8a7d73; --line:#ece3db;
@@ -12,7 +12,7 @@
   }
   html,body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   body { width:210mm; margin:0 auto; }
-  .page { width:210mm; padding:17mm 16mm 16mm; display:flex; flex-direction:column; }
+  .page { width:210mm; min-height:297mm; padding:17mm 16mm 16mm; display:flex; flex-direction:column; }
 
   .top { display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--ink); padding-bottom:11px; }
   .brand { display:flex; align-items:center; gap:12px; }
@@ -27,23 +27,28 @@
   .hero { margin-top:22px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
   .hero-l { max-width:150mm; }
   .hero .kick { font-size:10px; letter-spacing:2.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
-  .hero h1 { font-size:33px; line-height:1.05; letter-spacing:-0.8px; font-weight:800; margin-top:7px; }
+  .hero h1 { font-size:37px; line-height:1.05; letter-spacing:-0.8px; font-weight:800; margin-top:7px; }
   .hero .sub { font-size:12.5px; color:var(--ink); font-weight:700; margin-top:8px; }
   .hero .sub span { color:var(--accent); }
-  .hero p { font-size:11.3px; color:var(--slate); line-height:1.55; margin-top:11px; }
+  .hero p { font-size:11.8px; color:var(--slate); line-height:1.55; margin-top:11px; }
 
-  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
+  .main { flex:1; display:flex; flex-direction:column; justify-content:center; gap:30px; margin-top:18px; }
+  .pull { text-align:center; max-width:158mm; margin:0 auto; }
+  .pull .pq { font-size:20px; font-weight:800; line-height:1.32; letter-spacing:-0.4px; color:var(--ink); }
+  .pull .pq span { color:var(--accent); }
+  .pull .pa { font-size:9.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); font-weight:800; margin-top:12px; }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; background:#fff; }
   .card-head { display:flex; align-items:center; gap:8px; padding:10px 14px; background:var(--wash); border-bottom:1px solid var(--line); }
   .dot { flex:none; width:20px; height:20px; border-radius:50%; background:var(--accent); color:#fff; font-size:10.5px; font-weight:800; display:flex; align-items:center; justify-content:center; }
   .card-head .t { font-size:12.5px; font-weight:800; letter-spacing:-0.1px; }
-  .card-body { padding:15px 15px 13px; flex:1; display:flex; flex-direction:column; }
+  .card-body { padding:19px 16px 16px; flex:1; display:flex; flex-direction:column; }
   .kicker { font-size:8.8px; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
-  .title { font-size:15.5px; font-weight:800; letter-spacing:-0.3px; line-height:1.15; margin-top:6px; }
-  .desc { font-size:10.4px; color:var(--slate); line-height:1.5; margin-top:9px; }
+  .title { font-size:16.5px; font-weight:800; letter-spacing:-0.3px; line-height:1.15; margin-top:6px; }
+  .desc { font-size:10.9px; color:var(--slate); line-height:1.55; margin-top:10px; }
 
-  .qr-foot { margin-top:auto; padding-top:14px; border-top:1px dashed var(--line); display:flex; flex-direction:column; align-items:center; text-align:center; }
-  .qr-foot img { width:98px; height:98px; border:1px solid var(--line); border-radius:9px; padding:5px; background:#fff; }
+  .qr-foot { margin-top:auto; padding-top:16px; border-top:1px dashed var(--line); display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .qr-foot img { width:126px; height:126px; border:1px solid var(--line); border-radius:9px; padding:5px; background:#fff; }
   .qr-foot .big { font-size:11.5px; font-weight:800; margin-top:9px; letter-spacing:-0.1px; }
   .qr-foot .lnk { font-size:8.4px; color:var(--muted); margin-top:3px; word-break:break-all; }
   .qr-foot .lnk.blue { color:var(--accent); }
@@ -76,6 +81,13 @@
       <div class="sub">New Zealand's first <span>Claude Ambassador</span> · Co-founder of The Colab</div>
       <p>Adam runs a team of AI agents in public, every day, and builds in the open so every finding is reusable. In his talk, "Agents on the payroll," he unpacks what AI agents really mean for the people inside a business, honestly and practically, built together in Aotearoa. Scan any code below to go deeper.</p>
     </div>
+  </div>
+
+  <div class="main">
+
+  <div class="pull">
+    <div class="pq">Build in the <span>open</span>. Build for the model that's <span>coming</span>. Put agents on the team.</div>
+    <div class="pa">Adam Holt · Agents on the payroll</div>
   </div>
 
   <div class="cards">
@@ -122,6 +134,7 @@
       </div>
     </div>
 
+  </div>
   </div>
 
   <div class="foot">
