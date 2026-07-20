@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adam Holt · The Colab</title>
+<style>
+  @page { margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --ink:#20160f; --slate:#5b4f47; --muted:#8a7d73; --line:#ece3db;
+    --accent:#c8613f; --accent-dark:#a94e30; --wash:#faf5f0; --chipbg:#f6e9e2; --chipbd:#ecd6c9;
+  }
+  html,body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { width:210mm; margin:0 auto; }
+  .page { width:210mm; padding:17mm 16mm 16mm; display:flex; flex-direction:column; }
+
+  .top { display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--ink); padding-bottom:11px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .mark { width:44px; height:44px; border-radius:12px; background:linear-gradient(140deg,#d67851,#b34e2c); display:flex; align-items:center; justify-content:center; box-shadow:0 1px 3px rgba(32,22,15,.18); }
+  .mark svg { width:26px; height:26px; }
+  .brand-name { font-size:22px; font-weight:800; letter-spacing:-0.6px; }
+  .brand-name b { color:var(--accent); font-weight:800; }
+  .brand-tag { font-size:9.5px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
+  .top-right { text-align:right; }
+  .eyebrow { font-size:9.5px; letter-spacing:2.2px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .top-right .ev { font-size:11px; color:var(--muted); margin-top:3px; }
+
+  .hero { margin-top:22px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
+  .hero-l { max-width:150mm; }
+  .hero .kick { font-size:10px; letter-spacing:2.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .hero h1 { font-size:33px; line-height:1.05; letter-spacing:-0.8px; font-weight:800; margin-top:7px; }
+  .hero .sub { font-size:12.5px; color:var(--ink); font-weight:700; margin-top:8px; }
+  .hero .sub span { color:var(--accent); }
+  .hero p { font-size:11.3px; color:var(--slate); line-height:1.55; margin-top:11px; }
+
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; }
+  .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; background:#fff; }
+  .card-head { display:flex; align-items:center; gap:8px; padding:10px 14px; background:var(--wash); border-bottom:1px solid var(--line); }
+  .dot { flex:none; width:20px; height:20px; border-radius:50%; background:var(--accent); color:#fff; font-size:10.5px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .card-head .t { font-size:12.5px; font-weight:800; letter-spacing:-0.1px; }
+  .card-body { padding:15px 15px 13px; flex:1; display:flex; flex-direction:column; }
+  .kicker { font-size:8.8px; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .title { font-size:15.5px; font-weight:800; letter-spacing:-0.3px; line-height:1.15; margin-top:6px; }
+  .desc { font-size:10.4px; color:var(--slate); line-height:1.5; margin-top:9px; }
+
+  .qr-foot { margin-top:auto; padding-top:14px; border-top:1px dashed var(--line); display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .qr-foot img { width:98px; height:98px; border:1px solid var(--line); border-radius:9px; padding:5px; background:#fff; }
+  .qr-foot .big { font-size:11.5px; font-weight:800; margin-top:9px; letter-spacing:-0.1px; }
+  .qr-foot .lnk { font-size:8.4px; color:var(--muted); margin-top:3px; word-break:break-all; }
+  .qr-foot .lnk.blue { color:var(--accent); }
+
+  .foot { margin-top:28px; padding-top:13px; border-top:2px solid var(--ink); display:flex; justify-content:space-between; align-items:center; }
+  .foot .l { font-size:10.5px; color:var(--slate); }
+  .foot .l b { color:var(--ink); }
+  .foot .l b i { color:var(--accent); font-style:normal; }
+  .foot .r { font-size:10px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <div class="brand">
+      <div class="mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 9a7.5 7.5 0 1 0 0 14" stroke="#fff" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="16" r="2.6" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">the <b>colab</b></div>
+        <div class="brand-tag">AI expertise, built together</div>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="eyebrow">Speaker Spotlight</div>
+      <div class="ev">Human Connection in an AI World</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-l">
+      <div class="kick">Meet the speaker</div>
+      <h1>Adam Holt</h1>
+      <div class="sub">New Zealand's first <span>Claude Ambassador</span> · Co-founder of The Colab</div>
+      <p>Adam runs a team of AI agents in public, every day, and builds in the open so every finding is reusable. In his talk, "Agents on the payroll," he unpacks what AI agents really mean for the people inside a business, honestly and practically, built together in Aotearoa. Scan any code below to go deeper.</p>
+    </div>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-head"><div class="dot">1</div><div class="t">The Talk</div></div>
+      <div class="card-body">
+        <div class="kicker">Agents on the payroll</div>
+        <div class="title">Software was a tool. Agents are a teammate.</div>
+        <div class="desc">Adam's honest, practical take: put agents on the same queue as your team so they handle the volume while people keep the judgment. Augment first, govern early, and build for the model that's coming, not today's snapshot.</div>
+        <div class="qr-foot">
+          <img src="data:image/png;base64,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" alt="QR to Adam Holt's presentation">
+          <div class="big">Read the slides</div>
+          <div class="lnk">Opens in your browser, no download</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="dot">2</div><div class="t">The Community</div></div>
+      <div class="card-body">
+        <div class="kicker">thecolab.ai</div>
+        <div class="title">Learn to work with AI, together.</div>
+        <div class="desc">The Colab is where New Zealand businesses build real AI capability in the open: swap what's working, learn to delegate to agents rather than chase tools, and turn them into everyday teammates. AI expertise, built together.</div>
+        <div class="qr-foot">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAApAAAAKQAQAAAAAAznf9AAADMklEQVR4nO3d2U7EMAxA0Rj1/385PJQ03makSFOKw7UE6gJHzYuVxU2lt0/H18dFSEhISEhISEhISEhISEhISEhIyH9JHuNAzOXe5Pqx19t1Nbt301NCQkJCPk8e83Cu/Ij63X+O7bpQN3fnX7dWpeGQkJCQi3HoE58DbY6cfUp58z9VGg4JCQm5GMerG360fWbLMSL3uVRHjYZDQkJCLsbLfGljZMkzU45ZzDxqNBwSEhJyMUy+1BlQ3Fkzqzz9uhuzZo2GQ0JCQi6GypcSbkpYJ5/HcvU5f+EpISEhIZ8nr3yZj65HZtRZcubI/H9qNBwSEhJyMdL1cQlr5DZL+noju0Zeo+GQkJCQiyEjy+kK9H5daT/ncmVRcfOYrTV196anhISEhHyedOvjZ0YUc+Yri8YdfVf3SGs0HBISEnIxRL+ho3uJ8f0d/07P6F/6aswaDYeEhIRcDDUe727+Usy4PO9lzpxJ/xISEnJzUmKV5XmUVQvZ3qbtWTJ/CQkJuTlp8mWsF9J5067tvB6512g4JCQk5GKk+7nFPqOObHzO+jgkJOT2pKpXP3uNdl3H5kZ9vTddf6RzZ42GQ0JCQi5G6F/qd3l0zLp1XYfZ1X/d+JSQkJCQz5Nhv2CdB0cOjLOY83zWr9/4lJCQkJDPk259XFcIjbBV6/YrFb4G6aanhISEhHyeTOrVx9uOOmvGvGj7nLqHWaPhkJCQkIshtiroDLuDm86a51/mq+bkS0hIyK1JsbVDNjNm+wRnu7kxfwkJCfkPSLefm387cuZHuztRzJb0LyEhITcnk+9RzFpLWy0k6ZlfHarScEhISMjFSPZX13VF8Zr9nX2RokbDISEhIRcjXe+JfUZfYTTH4H7Gs0rDISEhIRcj1Ku35nfQsO9C2pG5vsb8JSQk5NZk+v0efexnLWdlZvyiz21PCQkJCfk8eby7qVfHxxU7Gp95k/E4JCTk5uSbfJnt2Ga/Ri6th93VqzQcEhIScjGSeiJ77NeD/Nxm/E5FjYZDQkJCLobKl/lXIG3V+rgSV3wYj0NCQm5Ouu9RfCJqNBwSEhISEhISEhISEhISEhISEhLyz5Pfg9PtPCbMczYAAAAASUVORK5CYII=" alt="QR to The Colab community">
+          <div class="big">Explore the community</div>
+          <div class="lnk blue">thecolab.ai/community</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="dot">3</div><div class="t">For Good</div></div>
+      <div class="card-body">
+        <div class="kicker">The For Good Project</div>
+        <div class="title">People and agents on NZ's biggest problems.</div>
+        <div class="desc">People and agents work the same queue: Discover, Research, Ideate, Build. Agents do the volume; a human decides what's meaningful and what ships. Watch real problems get worked, live and in the open.</div>
+        <div class="qr-foot">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAApAAAAKQAQAAAAAAznf9AAADO0lEQVR4nO3d3W7DIAyGYXvK/d8yO2gJ/gxoYlqUkb6W1nb5eRROLIgh8WJ/HV9/LkJCQkJCQkJCQkJCQkJCQkJCQkJ+JHnUHy6bi7mVtP217fVX/9dzLrtKSEhIyPvJo/1slR8/P0vIkC4ZswzPuegqISEhIe8nj/hP7Te+Pl1+jf7yOZddJSQkJOT95DHb4eEzRjHNjn3s0XBISEjIxZjmSw0/v3+er7lHwyEhISEXQ/Kl5sIiY20/e5z5qBx7NBwSEhJyMUK+7MfeFio9lio/83P2aDgkJCTkYvh8fF1zYe1fao6cn7dHwyEhISEXI92/fGXFlhvLexyuW+OR9SjmX0JCQj6c9NxrbBlz1I9sedHDsSZH7tFwSEhIyMWQ+eou2TJm0nLew2zz2ON5ca3PHg2HhISEXIxw/1LH3dp3NDPJoUKkPXs0HBISEnIxBvcvy/vTrF8jHo+s+3M9aI+GQ0JCQi6G9zWc9iuOxGNFR9dExqMuukpISEjI+0kf1XNapSffxYzZMdZ+jPE4JCTk08nwPLf2xKGaMd00P8axd5u7nkftezQcEhIScjHOfBmrO/nJRBZyadsez+T5RJCQkI8nU70n1no0a+q+tj/f29yl4ZCQkJCL4X0Nx0z7i20+eq7sxHuazFeHhIR8OOl9Zuyr4bMsWUznbF52lZCQkJD3k8P5RDkL9qsgdQR++VVCQkJC3k/K89zifCGzNgLX+nc/h53xOCQk5AeQ8n7IWs+J7zvrn1nk4buke5gXXSUkJCTk/aRrvTuvbvRuXG6mPcx+fL5HwyEhISEXQ+ar9/PQS+hzxnfrtujXl+/RcEhISMjFmD5fPa/l6TPjqCdqtkvDISEhIRdD7l+2KGEEnt+s27/Hh/nqkJCQH0DK84JrtDdBjuawe3eG1oP2aDgkJCTkYsh6SM2LrfpTQgYd5c141i4Nh4SEhFyMY7ZDnzukK8ljDcjPI+lfQkJCPpqc5su87kefrjFfbb5LwyEhISEXQ/JlXyvvn/JWe5NuOiJnPA4JCflwUtZDjsLT75JG6m17jT0aDgkJCbkY0/mXv489Gg4JCQkJCQkJCQkJCQkJCQkJCQn578lvHyQCPWJALY4AAAAASUVORK5CYII=" alt="QR to the For Good Project">
+          <div class="big">See it live</div>
+          <div class="lnk blue">forgood.thecolab.ai</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <div class="l"><b>the <i>colab</i></b> · AI expertise, built together.</div>
+    <div class="r">Adam Holt · New Zealand's first Claude Ambassador</div>
+  </div>
+
+</div>
+</body>
+</html>
