@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Longcloud — Event Recap</title>
+<title>Longcloud Event Recap</title>
 <style>
   @page { size: A4; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,9 +16,9 @@
 
   .top { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid var(--ink); padding-bottom:11px; }
   .brand { display:flex; align-items:center; gap:11px; }
-  .logo { width:36px; height:36px; }
+  .badge { width:47px; height:47px; border-radius:13px; background:linear-gradient(140deg,#14294b,#0b1728); display:flex; align-items:center; justify-content:center; box-shadow:0 1px 3px rgba(15,27,45,.18); }
+  .badge svg { width:34px; height:34px; }
   .brand-name { font-size:22px; font-weight:800; letter-spacing:-0.5px; }
-  .brand-name span { color:var(--brand); }
   .brand-tag { font-size:9.5px; color:var(--muted); letter-spacing:2.2px; text-transform:uppercase; margin-top:2px; }
   .top-right { text-align:right; }
   .eyebrow { font-size:9.5px; letter-spacing:2.2px; text-transform:uppercase; color:var(--brand); font-weight:700; }
@@ -62,12 +62,24 @@
 
   <div class="top">
     <div class="brand">
-      <svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M34 30a8 8 0 0 0-1.4-15.9A11 11 0 0 0 11 17.5 8.5 8.5 0 0 0 13 34h21z" fill="#1857c4"/>
-        <path d="M30 25a6 6 0 0 0-1-11.9A8.2 8.2 0 0 0 13.6 15" stroke="#12b3a6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-      </svg>
+      <div class="badge">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5b93ec"/>
+              <stop offset="1" stop-color="#2483da"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#cg)">
+            <rect x="15" y="33" width="34" height="17" rx="8.5"/>
+            <circle cx="24" cy="34" r="8.5"/>
+            <circle cx="33" cy="26" r="13"/>
+            <circle cx="45" cy="33" r="10.5"/>
+          </g>
+        </svg>
+      </div>
       <div>
-        <div class="brand-name">Long<span>cloud</span></div>
+        <div class="brand-name">Longcloud</div>
         <div class="brand-tag">Software · AI · Digital Platforms</div>
       </div>
     </div>
@@ -79,7 +91,7 @@
 
   <div class="lede">
     <h1>Thanks for joining us.</h1>
-    <p>A quick recap of the evening — Nick Foley on what video games teach us about human connection in an AI world, and a live Q&amp;A between Longcloud's Paul Singh and Trent Montgomery, Managing Director of TDM Transport. Scan either code below to go deeper.</p>
+    <p>A quick recap of the evening: Nick Foley on what video games teach us about human connection in an AI world, and a live Q&amp;A between Longcloud's Paul Singh and Trent Montgomery, Managing Director of TDM Transport. Scan either code below to go deeper.</p>
   </div>
 
   <div class="main">
@@ -95,12 +107,12 @@
       <div class="card-body">
         <div class="kicker">Nick Foley · Longcloud</div>
         <div class="title">Human Connection in an AI World</div>
-        <div class="desc">Nick takes a look at the New Zealand video game industry — the studios, the talent and the stories being built right here — and what it tells us about creativity, community and human connection in a world increasingly shaped by AI.</div>
+        <div class="desc">Nick takes a look at the New Zealand video game industry: the studios, the talent and the stories being built right here, and what it tells us about creativity, community and human connection in a world increasingly shaped by AI.</div>
         <div class="qr-zone">
           <img src="data:image/png;base64,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" alt="QR code to the presentation">
           <div class="qr-txt">
-            <div class="big">Watch the talk</div>
-            <div class="small">Scan to open Nick's full presentation — right in your browser, no download.</div>
+            <div class="big">Read the slides</div>
+            <div class="small">Scan to open Nick's full presentation, right in your browser. No download.</div>
           </div>
         </div>
       </div>
@@ -116,7 +128,7 @@
       <div class="card-body">
         <div class="kicker">TDM Transport · Waikato, NZ</div>
         <div class="title">Less admin, more road</div>
-        <div class="desc">Paul sat down with TDM's Managing Director Trent Montgomery on the real-time platform Longcloud built — an office portal and driver app on one live database, connecting fleet, drivers, customers and jobs to power the next phase of growth.</div>
+        <div class="desc">Paul sat down with TDM's Managing Director Trent Montgomery on the real-time platform Longcloud built: an office portal and driver app on one live database, connecting fleet, drivers, customers and jobs to power the next phase of growth.</div>
         <div class="chips">
           <span class="chip">Office portal + driver app</span>
           <span class="chip">Real-time sync</span>
@@ -126,7 +138,7 @@
           <img src="data:image/png;base64,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" alt="QR code to the TDM Transport case study">
           <div class="qr-txt">
             <div class="big">Want to know more?</div>
-            <div class="small">Read the full case study — scan the code or visit:</div>
+            <div class="small">Read the full case study. Scan the code or visit:</div>
             <div class="link">longcloud.nz/our-work/tdm-transport-fleet-dispatch-portal</div>
           </div>
         </div>
@@ -137,7 +149,7 @@
   </div>
 
   <div class="foot">
-    <div class="l"><b>Longcloud</b> — we build the software and AI platforms that move businesses forward.</div>
+    <div class="l"><b>Longcloud</b> builds the software and AI platforms that move businesses forward.</div>
     <div class="r">Let's talk about what we could build together.</div>
   </div>
 
