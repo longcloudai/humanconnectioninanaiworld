@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adam Holt · Audience Q&amp;A</title>
+<style>
+  @page { size:A4; margin:15mm 16mm; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --ink:#20160f; --slate:#463c34; --muted:#8a7d73; --line:#ece3db;
+    --accent:#c8613f; --accent-dark:#a94e30; --wash:#faf5f0;
+  }
+  html,body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  .header { display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--ink); padding-bottom:10px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .logo-img { height:32px; border-radius:7px; display:block; box-shadow:0 1px 3px rgba(32,22,15,.16); }
+  .brand-tag { font-size:9px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; max-width:130px; line-height:1.5; }
+  .top-right { text-align:right; }
+  .eyebrow { font-size:9.5px; letter-spacing:2.2px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .top-right .ev { font-size:10.5px; color:var(--muted); margin-top:3px; }
+
+  .title { margin-top:20px; }
+  .title .kick { font-size:10px; letter-spacing:2.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .title h1 { font-size:29px; letter-spacing:-0.7px; font-weight:800; line-height:1.08; margin-top:6px; }
+  .title .sub { font-size:12px; font-weight:700; margin-top:7px; }
+  .title .sub span { color:var(--accent); }
+  .title p { font-size:11px; color:var(--slate); line-height:1.55; margin-top:9px; max-width:172mm; }
+
+  .qa { margin-top:17px; padding-top:15px; border-top:1px solid var(--line); break-inside:avoid; }
+  .qa:first-of-type { border-top:none; }
+  .q { display:flex; gap:10px; align-items:flex-start; }
+  .qn { flex:none; width:21px; height:21px; border-radius:50%; background:var(--accent); color:#fff; font-size:10.5px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+  .qt { font-size:13px; font-weight:800; color:var(--ink); line-height:1.32; letter-spacing:-0.2px; }
+  .a { font-size:11px; color:var(--slate); line-height:1.62; margin-top:8px; padding-left:31px; }
+
+  .foot { margin-top:26px; padding-top:12px; border-top:2px solid var(--ink); display:flex; justify-content:space-between; align-items:center; }
+  .foot .l { font-size:10px; color:var(--slate); }
+  .foot .l b { color:var(--ink); }
+  .foot .l b i { color:var(--accent); font-style:normal; }
+  .foot .r { font-size:9.5px; color:var(--muted); }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">
+      <img class="logo-img" src="data:image/png;base64,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" alt="thecolab.ai">
+      <div class="brand-tag">AI expertise, built together</div>
+    </div>
+    <div class="top-right">
+      <div class="eyebrow">Audience Q&amp;A</div>
+      <div class="ev">Human Connection in an AI World</div>
+    </div>
+  </div>
+
+  <div class="title">
+    <div class="kick">Your questions, answered</div>
+    <h1>Adam Holt takes the floor</h1>
+    <div class="sub">Adam Holt · New Zealand's first <span>Claude Ambassador</span> · Co-founder of The Colab</div>
+    <p>You asked some cracking questions on the night. Here are Adam's answers, in his own words: honest, practical, and built on running a team of AI agents in public every day.</p>
+  </div>
+
+    <div class="qa">
+      <div class="q"><span class="qn">1</span><span class="qt">As AI needs more and more context, how do you stop it from picking up incorrect context, or context it shouldn't be listening to?</span></div>
+      <div class="a">This is the whole game, honestly. My rule is simple: treat context the way you'd treat access for a new staff member. You wouldn't hand a new hire the keys to everything on day one, and you shouldn't hand them to an agent either. So we do three things. One source of truth: if finance and marketing are looking at different numbers, the AI will happily pick the wrong one and sound confident doing it, so fix the data before you point AI at it. Permissioning: the agent only sees what the task actually needs, nothing more. And a human on anything that ships: the AI does the first pass, a person decides what's actually true. Garbage context in, confident garbage out, so we spend most of our effort on what it's allowed to see, not on clever prompting.</div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qn">2</span><span class="qt">What are the risks around Claude and data quality, with learning, de-learning and relearning? Can it become a bit of a black hole if the data quality is bad?</span></div>
+      <div class="a">Two things people tend to mix up here. Claude doesn't “learn” from your day-to-day the way a person does. It isn't quietly training on your business in the background; what it knows in the moment is whatever context you hand it. So the black-hole risk isn't the model slowly rotting, it's you feeding it a messy, contradictory pile of documents and getting confident nonsense back. The fix is boring but real: clean, current, single source of truth. If you've got five versions of a policy floating around, retire four. Where bad data really bites is retrieval, because if your knowledge base is full of out-of-date material the AI will surface it as gospel. So treat your data like a garden and keep weeding it. The model quality is rarely your problem. Your data hygiene almost always is.</div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qn">3</span><span class="qt">I'm using Fable and finding it very powerful. What guardrails do you suggest I give it to make sure the IP stays mine and isn't disseminated?</span></div>
+      <div class="a">Good, Fable's a beast, glad it's working for you. On IP, a few practical things. Check the plan you're on first: the business and enterprise tiers with Claude are set up so your data isn't used to train the models, and that's the setting that matters, so confirm it in writing rather than assume it. Keep your crown-jewels IP in systems you control and let the AI reach in for a specific task, instead of dumping everything into a chat and losing track of where it went. Write a one-page usage policy so your team knows what's okay to paste and what isn't, because most leaks are a person, not the model. And log what you're doing. Boring governance beats a clever prompt every time. Build in the open with your team, but keep the actual IP permissioned and yours.</div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qn">4</span><span class="qt">What's been the biggest benefit and the biggest challenge of adopting AI in the workplace, and will AI and humans mainly work together in the future?</span></div>
+      <div class="a">Biggest benefit: speed on the boring stuff. The research, the first drafts, the high-volume work that used to eat a whole Tuesday now gets done while you sleep, and you turn up as the editor. That's a genuine gear change. Biggest challenge: it isn't the tech, it's us. The barrier is skill, not software. Learning to delegate, to describe an outcome clearly, to trust but check. That's a management muscle and most of us are rusty at it. And yes, the future is humans and agents on the same queue. Agents do the volume, people do the judgment: what matters, and what ships. You don't manage one AI, you run a team of them. The people who do well won't be the ones with the fanciest tools, they'll be the ones who learned to lead a mixed team.</div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qn">5</span><span class="qt">Will AI ever be a threat to humans?</span></div>
+      <div class="a">Honest answer: the sci-fi version isn't the thing that keeps me up at night. The real risks are nearer and more boring. People trusting confident output they didn't check. Jobs changing faster than we retrain for. A handful of companies holding a lot of power. Those are governance and society problems, and they're on us to get right. It's actually why I build in the open: closed, secret AI is where the scary version lives, and transparent, accountable AI is how we keep it useful. Treat it like any genuinely powerful tool. Huge upside, real responsibility. Respect it, govern it, keep a human accountable. Don't fear it, and don't worship it either.</div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qn">6</span><span class="qt">If your AI tools disappeared tomorrow, what part of your business would come to a standstill?</span></div>
+      <div class="a">Ha, the honest answer is quite a lot, and I'm okay admitting that. I run a team of agents in public every day, so the research, the drafting and the first-pass build work would slow right down. But here's the thing: nothing would truly stop. The judgment still lives with people, and the agents are the muscle, not the brain. It'd be like losing half the team overnight. Painful and slower, but the business would still know exactly what it's trying to do. That's the real test, actually. If losing your AI would genuinely kill the business, you've handed over too much of the judgment. Keep the thinking with the humans and you stay resilient.</div>
+    </div>
+    <div class="qa">
+      <div class="q"><span class="qn">7</span><span class="qt">Will it blend?</span></div>
+      <div class="a">Ha, love it. Yes, it blends. That's kind of the whole point. The magic isn't AI off doing its own thing in the corner, it's AI blended into how your team already works: same queue, same goals, humans and agents mixed together. The trick is blending it in on purpose, not just tipping it in and hoping. So yes, it blends. Just don't put your hand in while it's still running.</div>
+    </div>
+
+  <div class="foot">
+    <div class="l"><b>the <i>colab</i></b> · AI expertise, built together.</div>
+    <div class="r">Agents on the payroll · forgood.thecolab.ai</div>
+  </div>
+
+</body>
+</html>
