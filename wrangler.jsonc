@@ -1,0 +1,23 @@
+{
+  // Cloudflare Worker that serves the document portal.
+  // Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+  "name": "hciaw-documents",
+  "main": "src/index.js",
+  "compatibility_date": "2025-01-01",
+
+  // Human-facing title shown on the portal page. Change freely.
+  "vars": {
+    "SITE_TITLE": "Human Connection in an AI World",
+    "SITE_TAGLINE": "Documents & resources"
+  },
+
+  // R2 bucket that stores the documents. The binding name (DOCS) is what the
+  // Worker code references; the bucket_name must match the real bucket you
+  // create with `npm run bucket:create`.
+  "r2_buckets": [
+    {
+      "binding": "DOCS",
+      "bucket_name": "hciaw-documents"
+    }
+  ]
+}

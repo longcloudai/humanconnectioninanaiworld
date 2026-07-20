@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.dev.vars
+qr/
+# Uploaded documents live in R2, not git. Keep the folder but ignore contents
+# so you don't accidentally commit potentially sensitive files.
+documents/*
+!documents/.gitkeep

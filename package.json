@@ -1,0 +1,18 @@
+{
+  "name": "hciaw-documents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Document portal for 'Human Connection in an AI World' — recipients scan a QR code to view and download documents served from Cloudflare R2.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "bucket:create": "wrangler r2 bucket create hciaw-documents",
+    "upload": "node scripts/upload.mjs",
+    "qr": "node scripts/qr.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4",
+    "wrangler": "^4.0.0"
+  }
+}

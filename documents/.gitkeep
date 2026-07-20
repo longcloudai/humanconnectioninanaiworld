@@ -1,0 +1,8 @@
+# Drop the documents you want recipients to access into this folder.
+#
+# Anything here (PDFs, images, Office files, etc.) gets pushed to the R2
+# bucket by `npm run upload` and then appears on the portal automatically.
+# Subfolders are preserved as part of the file's path/name.
+#
+# This .gitkeep file is ignored by the uploader and just keeps the empty
+# folder in git.
