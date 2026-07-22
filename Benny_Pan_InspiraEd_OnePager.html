@@ -47,7 +47,8 @@
   .pull .pq span { color:var(--accent); }
   .pull .pa { font-size:9.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); font-weight:800; margin-top:10px; }
 
-  .cta { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .cta { display:flex; justify-content:center; }
+  .cta .card { width:135mm; max-width:100%; }
   .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; background:#fff; }
   .card-head { padding:11px 16px; background:var(--wash); border-bottom:1px solid var(--line); font-size:12.5px; font-weight:800; letter-spacing:-0.1px; display:flex; align-items:center; gap:8px; }
   .card-head .ic { flex:none; width:20px; height:20px; border-radius:50%; background:var(--accent); color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; }
@@ -57,7 +58,7 @@
   .card-txt .h span { color:var(--accent); }
   .card-txt p { font-size:10.3px; color:var(--slate); line-height:1.5; margin-top:6px; }
   .qr-side { flex:none; text-align:center; }
-  .qr-side img { width:106px; height:106px; border:1px solid var(--line); border-radius:9px; padding:5px; background:#fff; }
+  .qr-side img { width:118px; height:118px; border:1px solid var(--line); border-radius:9px; padding:5px; background:#fff; }
   .qr-side .cap { font-size:8.6px; font-weight:800; letter-spacing:0.3px; text-transform:uppercase; color:var(--ink); margin-top:6px; }
   .qr-side .lnk { font-size:7.8px; color:var(--muted); margin-top:2px; word-break:break-all; }
 
@@ -128,22 +129,7 @@
 
   <div class="cta">
     <div class="card">
-      <div class="card-head"><div class="ic">1</div>Find Your AI Potential</div>
-      <div class="card-body">
-        <div class="card-txt">
-          <div class="h">Take the <span>free</span> 15-minute scan</div>
-          <p>Get your AI Priority Map: one page showing which everyday tasks AI can take off your plate, and which to leave well alone. Yours to keep.</p>
-        </div>
-        <div class="qr-side">
-          <img src="data:image/png;base64,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" alt="QR to InspiraEd AI scan">
-          <div class="cap">Start the scan</div>
-          <div class="lnk">inspira-ed.com</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head"><div class="ic">2</div>Talk to Benny</div>
+      <div class="card-head">Talk to Benny</div>
       <div class="card-body">
         <div class="card-txt">
           <div class="h">Book a <span>no-obligation</span> discovery</div>
