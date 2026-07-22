@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Benny Pan · InspiraEd</title>
+<style>
+  @page { size:A4; margin:0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --ink:#1b2333; --slate:#48526b; --muted:#8892a6; --line:#e6e9f2;
+    --accent:#4f46e5; --accent-dark:#3a32b8; --gold:#e0a43b; --wash:#f5f6fb; --chipbg:#ecebfb; --chipbd:#d9d6f6;
+  }
+  html,body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { width:210mm; margin:0 auto; }
+  .page { width:210mm; min-height:297mm; padding:16mm 16mm 14mm; display:flex; flex-direction:column; }
+
+  .top { display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--ink); padding-bottom:11px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .mark { width:44px; height:44px; border-radius:12px; background:linear-gradient(140deg,#5a51 f0,#3a32b8); background:linear-gradient(140deg,#6a62f2,#3a32b8); display:flex; align-items:center; justify-content:center; box-shadow:0 1px 3px rgba(27,35,51,.2); }
+  .mark svg { width:24px; height:24px; }
+  .brand-name { font-size:22px; font-weight:800; letter-spacing:-0.6px; }
+  .brand-name span { color:var(--accent); }
+  .brand-tag { font-size:9.5px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
+  .top-right { text-align:right; }
+  .eyebrow { font-size:9.5px; letter-spacing:2.2px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .top-right .ev { font-size:10.5px; color:var(--muted); margin-top:3px; }
+
+  .body { flex:1; display:flex; flex-direction:column; justify-content:space-between; padding-top:12px; }
+  .hero { }
+  .hero .kick { font-size:10px; letter-spacing:2.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .hero h1 { font-size:35px; letter-spacing:-0.8px; font-weight:800; line-height:1.05; margin-top:6px; }
+  .hero .sub { font-size:12.5px; font-weight:700; margin-top:8px; }
+  .hero .sub span { color:var(--accent); }
+  .hero p { font-size:11.6px; color:var(--slate); line-height:1.58; margin-top:11px; }
+
+  .sec-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-weight:800; margin-bottom:11px; }
+
+  .track { }
+  .tr-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .tr { border:1px solid var(--line); border-radius:12px; padding:13px 15px; background:#fff; position:relative; padding-left:19px; }
+  .tr::before { content:""; position:absolute; left:0; top:13px; bottom:13px; width:4px; border-radius:4px; background:var(--accent); }
+  .tr-h { font-size:11.5px; font-weight:800; color:var(--ink); letter-spacing:-0.1px; }
+  .tr-d { font-size:10.4px; color:var(--slate); line-height:1.48; margin-top:5px; }
+
+  .pull { margin:0 auto; text-align:center; max-width:172mm; background:var(--wash); border:1px solid var(--line); border-radius:14px; padding:18px 22px; }
+  .pull .pq { font-size:16.5px; font-weight:800; line-height:1.36; letter-spacing:-0.3px; color:var(--ink); }
+  .pull .pq span { color:var(--accent); }
+  .pull .pa { font-size:9.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); font-weight:800; margin-top:10px; }
+
+  .cta { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; background:#fff; }
+  .card-head { padding:11px 16px; background:var(--wash); border-bottom:1px solid var(--line); font-size:12.5px; font-weight:800; letter-spacing:-0.1px; display:flex; align-items:center; gap:8px; }
+  .card-head .ic { flex:none; width:20px; height:20px; border-radius:50%; background:var(--accent); color:#fff; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .card-body { padding:15px 16px 14px; flex:1; display:flex; gap:14px; align-items:center; }
+  .card-txt { flex:1; }
+  .card-txt .h { font-size:13.5px; font-weight:800; letter-spacing:-0.2px; }
+  .card-txt .h span { color:var(--accent); }
+  .card-txt p { font-size:10.3px; color:var(--slate); line-height:1.5; margin-top:6px; }
+  .qr-side { flex:none; text-align:center; }
+  .qr-side img { width:106px; height:106px; border:1px solid var(--line); border-radius:9px; padding:5px; background:#fff; }
+  .qr-side .cap { font-size:8.6px; font-weight:800; letter-spacing:0.3px; text-transform:uppercase; color:var(--ink); margin-top:6px; }
+  .qr-side .lnk { font-size:7.8px; color:var(--muted); margin-top:2px; word-break:break-all; }
+
+  .foot { margin-top:0; padding-top:13px; border-top:2px solid var(--ink); display:flex; justify-content:space-between; align-items:center; }
+  .foot .l { font-size:10.5px; color:var(--slate); }
+  .foot .l b { color:var(--ink); }
+  .foot .l b span { color:var(--accent); }
+  .foot .r { font-size:10px; color:var(--muted); }
+  a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <div class="brand">
+      <div class="mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3l2.2 4.9L19.5 8l-4 3.6 1 5.4-4.5-2.6L7.5 17l1-5.4-4-3.6 5.3-.1L12 3z" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Inspira<span>Ed</span></div>
+        <div class="brand-tag">AI adoption, without the hype</div>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="eyebrow">AI Strategy · Training · Talent</div>
+      <div class="ev">Businesses &amp; New Zealand schools</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+  <div class="hero">
+    <div class="kick">Meet the founder</div>
+    <h1>Benny Pan</h1>
+    <div class="sub">Founder, <span>InspiraEd</span> · Educator &amp; mentor for young people</div>
+    <p>As an educator and mentor for young people, and the founder of InspiraEd, Benny holds a Master of Technological Futures from academyEX and helps businesses and New Zealand schools adopt AI without the hype. His focus is people and talent first: assess and think with clarity before you automate, so teams grow their people instead of hollowing out the bench.</p>
+  </div>
+
+  <div class="track">
+    <div class="sec-label">Track record</div>
+    <div class="tr-grid">
+      <div class="tr">
+        <div class="tr-h">National reach</div>
+        <div class="tr-d">Delivered a national training contract across five New Zealand cities.</div>
+      </div>
+      <div class="tr">
+        <div class="tr-h">Global classroom</div>
+        <div class="tr-d">Designed and ran a six-week AI competency programme for leaders and educators across 18 countries, with the Asia-Europe Foundation.</div>
+      </div>
+      <div class="tr">
+        <div class="tr-h">Real automation</div>
+        <div class="tr-d">Built a tailor-made Claude Cowork workflow for a Christchurch community health organisation, automating their reporting.</div>
+      </div>
+      <div class="tr">
+        <div class="tr-h">At scale</div>
+        <div class="tr-d">Organised, hosted and led an AI training day for more than 100 people.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull">
+    <div class="pq">Assess and think with <span>clarity</span> before you automate, so teams grow their people instead of <span>hollowing out the bench</span>.</div>
+    <div class="pa">Benny Pan · InspiraEd</div>
+  </div>
+
+  <div class="cta">
+    <div class="card">
+      <div class="card-head"><div class="ic">1</div>Find Your AI Potential</div>
+      <div class="card-body">
+        <div class="card-txt">
+          <div class="h">Take the <span>free</span> 15-minute scan</div>
+          <p>Get your AI Priority Map: one page showing which everyday tasks AI can take off your plate, and which to leave well alone. Yours to keep.</p>
+        </div>
+        <div class="qr-side">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlAAAAJQCAIAAADOgM0SAAALsklEQVR4nO3dwW0jRxRFUctQGF46BOcfgUPw0nm0IzAHBU0N/9c9Zz0gSs3mXNTqfTzP8xsAfHe/v/sAAPArCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQMLnuw/wVX/8+de7j/Ct/PvP30f//vT51z7/tu3PZ9rn89q09/+UGx4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZCwfg/v1PY9p1O398CmPc9p+2rTns+p2v7c9u/r1Pbv65QbHgAJggdAguABkCB4ACQIHgAJggdAguABkCB4ACQIHgAJggdAguABkCB4ACQIHgAJggdAguABkJDbwzs1bS9q+16Xfb7Xpp3/tu1/r/8fdnHDAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEuzh8SXT9t627+1N21e7/f1Oe3/43tzwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABHt4fMn2fbLt5z9l344yNzwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyDBHt4P2Ov6uW7vpd3ebzt1+/y33X4+2037vnjNDQ+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEjI7eHZ9/q5bu/b3f78U9PO7/n8XP5/+N7c8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgISP53nefQb4X7f3yW7vt912ex/utml7eHxvbngAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0DC57sPMN3tva7t+2q1PbNp55/2/G+/z9P+3lPTzj/tPLe54QGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAn28H5g2v7T9vNM2/+77fbe2LT9wmn7bbfft2m/R15zwwMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABLW7+Hd3ve6/fm3TTv/tL20258/bS9w+/vv9/VabW/ylBseAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQ8PE8z7vP8Ett36/afp5pf+9t259nbV/N+/a9ueEBkCB4ACQIHgAJggdAguABkCB4ACQIHgAJggdAguABkCB4ACQIHgAJggdAguABkCB4ACQIHgAJn+8+AHdN28eatr817fnctn0/7/Z5tr8P084zjRseAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQ8PE8z7vP8EtN2+uaZvse2LTzTzvPqe37ebdN+75ObX8/T7nhAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACZ/vPsBX2bd7bfve1bTzb9+HOz3P7ed5+/lMe/6npp1nOzc8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMg4eN5nnef4VuZtt92avv5T03bG5u232av7rXt73+NGx4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZCwfg+vtr/Fa9P2205NO8+p7b8X3+/35oYHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkrN/Dm2b73tX2PbPbpn1fp6a9n9Pet2l/77T9zu3vvxseAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQsH4Pb/u+1Hbbn+e0/bNT086//TzT3s9p7OEBwAKCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQsH4P79T2fbJptu+lndr+/U57PtP27aa9n7Xz3OaGB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJAgeAAmCB0CC4AGQIHgAJKzfw9u+pzXt809t38fy/F+7ff6a7d/X9t+7Gx4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZAgeAAkCB4ACYIHQILgAZCwfg+P96rtpW3fMztV2/87dXtP8VTt+Z9ywwMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABI+332Ar5q2H7bd6d7VtL20U9v3vXht2l7dqWm/l+3c8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgIT1e3inpu1d3XZ7T+v23ti0PbBp55lm2ve7/fd++3lufz6n3PAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4CE3B7eqWn7Z7X9qlO3n8+0vbdT2/fVpj3PU7ef5/bv9zY3PAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIEHwAEgQPAASBA+ABMEDIMEeHl8ybX/r9l7a9r292v7ZtH2+ab+X7d/vKTc8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgwR4eX3J7f+5UbT/vttrzuf33Tvu91PYR3fAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4CEj+d53n2GL6ntOZ2a9nym7YHd5n17r9v7iNO+3+3nv80ND4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASPh89wF+tWl7XTW1fbLbbj+f2u+l9n5uP/8pNzwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyBB8ABIEDwAEgQPgATBAyDh43med58BAK5zwwMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABIED4AEwQMgQfAASBA8ABL+A5YGVstMoy4sAAAAAElFTkSuQmCC" alt="QR to InspiraEd AI scan">
+          <div class="cap">Start the scan</div>
+          <div class="lnk">inspira-ed.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ic">2</div>Talk to Benny</div>
+      <div class="card-body">
+        <div class="card-txt">
+          <div class="h">Book a <span>no-obligation</span> discovery</div>
+          <p>See where AI actually pays off in your business. A relaxed conversation about your people, your tasks and your next best step.</p>
+        </div>
+        <div class="qr-side">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAApAAAAKQCAIAAACn190HAAANvUlEQVR4nO3dwY0bRwBEUctQGD46BOcfgUPw0XnQV/mywkDbYn31ewEQs8PmfvSpvrxer98AgG2/v/sBAIDvE2wACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAj4+u4H+FF//PnXux/hl/LvP3+/+xH+5+n3u/b8T62d57X3efo8nH7/a89zm7Xz/JQbNgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AATk97Cfqu+hPrW2p7u2Z7z2+WvW3ueate937XlOq5+fp9ywASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIOC6Peyn1vZW63u39f3p+vOfdtvfW+f/W4sbNgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AATYw+anWttLXtsDPv1+1t7/aae/39veJ+/lhg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQAB9rD5IWv7zbdZez9r+9zOG78SN2wACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIsIf9HU/3dG9z2/tZ23te228+/fc+dfr91M9//flv44YNAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAdftYa/tB9et7R/X96RPq+95189Pff+b93LDBoAAwQaAAMEGgADBBoAAwQaAAMEGgADBBoAAwQaAAMEGgADBBoAAwQaAAMEGgADBBoAAwQaAAMEGgID8HvbpfVnea23fem3/eO3z195PnffDt9ywASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIODL6/V69zNMO72vfHrv9vTzn3bbHvPaeaufn9PW3udtv5fbuGEDQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgD3sT7a2H2y/9mO37QHX95hPq+/Tr53P07+v236/btgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQcN0e9m37qWt/7237x6et7SuvPc9TzufH1t7PU2vv8yk3bAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAj4+u4H+NlO7/uu7a3aD/5czsOvbe38rH3+2vu57Ty7YQNAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0DAdXvYa3urp59nbR93bT+7fh7WPn/t/Zw+n2t7zGvPw+dywwaAAMEGgADBBoAAwQaAAMEGgADBBoAAwQaAAMEGgADBBoAAwQaAAMEGgADBBoAAwQaAAMEGgADBBoCA/B52fV/59Oef3gNee/9r6vvKp8/DbfvZdaff59r5X+OGDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAFfXq/Xu59h2um927U94DVr+7hre8919d/XmrXf+23v/zQ3bAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAi4bg+7vmd8+vnX3s/a89St7SXXrZ23td+LvfPP5YYNAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAdftYd9mbY92bc97zdrfu/Y8T9X3ntfctj+9xg0bAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAq7bw17bY65//lNr+8Rrz1O3dt5OWzs//p/82tywASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIMAedkx97/a2z39q7XzW94Zv+37Xvi/n+XO5YQNAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0DA13c/wI+q78s+ff61fd+n6vvWa/u+a+q/x9Pqz//UbX/vaW7YABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAEJDfw36qvs+6tg992tq+df39rH1+fY/8tvNZPw9rv9+n3LABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEg4Lo97Lr6/m59v3nN2vf71Nq+8pq15z993m77/T7lhg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQAB+T3s+l7vU/X94zW3nZ819pU/Vv/9nv5+b+OGDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAH5Peyn6nur9X3c0+yFt9z2/k//vfXPt5/9MTdsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACMjvYa/tv67xfj5W31e+7fta288+/T7XPr/+PuvcsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASAgv4d9ep+1vpe8Zm1P1/f7sdPv87Y977Xztra3/dTa+zzNDRsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwAC8nvY9X3cNWt71bc5vQ99237wU2vnc+37tW/9Xm7YABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAECDYABAg2AAQINgAEJDfw37qtr3Vtf1az8O31vaenZ/38j4/5oYNAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAYINAAGCDQABgg0AAdftYT91ep/1qfqea31vuH4e6s//1Nrfu/Y8T62dt/r/w6fcsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASDAHjY/pL7vu/b8a89z2trfW99Xfvo+7Vu3uGEDQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgD1spp3e6z29v3vb86x9/mlrz3P6/Nirfi83bAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAiwh/0d9l8/Vt8zfmpt3/q0tb93bS/8qfp5eGptH73+/t2wASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIECwASBAsAEgQLABIOC6Pez6HjN8q77fbC/5c62dh/o++ho3bAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAgQbAAIEGwACBBsAAj48nq93v0MAMB3uGEDQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAgGADQIBgA0CAYANAwH99w8rt3d58dAAAAABJRU5ErkJggg==" alt="QR to book a discovery call">
+          <div class="cap">Book a call</div>
+          <div class="lnk">tally.so/r/q4p9A7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="foot">
+    <div class="l"><b>Inspira<span>Ed</span></b> · Helping people put AI to work, without the hype.</div>
+    <div class="r">inspira-ed.com</div>
+  </div>
+
+</div>
+</body>
+</html>
