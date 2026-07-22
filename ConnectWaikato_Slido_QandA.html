@@ -2,33 +2,32 @@
 <style>
   @page { margin:14mm 15mm; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  :root { --bg:#0a1512; --panel:#12241d; --accent:#5ad2aa; --cream:#f0e6dc; --muted:#93a89c; --line:rgba(90,210,170,.16); }
-  html,body { background:var(--bg); color:var(--cream); font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .serif { font-family:Georgia,"Times New Roman",serif; }
-  .header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid var(--line); padding-bottom:12px; }
-  .brand { font-family:Georgia,serif; font-size:23px; font-weight:700; letter-spacing:-0.3px; }
-  .brand span { font-style:italic; color:var(--accent); }
+  :root { --bg:#f7f3ea; --ink:#12281e; --accent:#1a8a5f; --muted:#6f7d73; --line:rgba(18,40,30,.14); }
+  html,body { background:var(--bg); color:var(--ink); font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--ink); padding-bottom:12px; }
+  .brand { font-family:Georgia,serif; font-size:23px; font-weight:700; letter-spacing:-0.3px; color:var(--ink); }
+  .brand span.w { font-style:italic; color:var(--accent); }
   .brand .tag { display:block; font-family:-apple-system,sans-serif; font-size:8.5px; letter-spacing:2.4px; text-transform:uppercase; color:var(--muted); font-weight:700; margin-top:5px; font-style:normal; }
   .top-right { text-align:right; }
   .eyebrow { font-size:9px; letter-spacing:2.4px; text-transform:uppercase; color:var(--accent); font-weight:800; }
   .top-right .ev { font-size:10px; color:var(--muted); margin-top:4px; }
   .lead { margin:18px 0 4px; }
-  .lead h1 { font-family:Georgia,serif; font-size:26px; font-weight:700; letter-spacing:-0.4px; line-height:1.1; }
+  .lead h1 { font-family:Georgia,serif; font-size:26px; font-weight:700; letter-spacing:-0.4px; line-height:1.1; color:var(--ink); }
   .lead h1 i { color:var(--accent); }
   .lead p { font-size:10.5px; color:var(--muted); margin-top:8px; max-width:165mm; line-height:1.5; }
   .qa { margin-top:15px; padding-top:14px; border-top:1px solid var(--line); break-inside:avoid; }
-  .q { font-family:Georgia,serif; font-size:14px; font-weight:700; color:var(--cream); line-height:1.32; letter-spacing:-0.2px; padding-left:13px; border-left:2px solid var(--accent); }
+  .q { font-family:Georgia,serif; font-size:14px; font-weight:700; color:var(--ink); line-height:1.32; letter-spacing:-0.2px; padding-left:13px; border-left:3px solid var(--accent); }
   .a { margin-top:9px; }
-  .a p { font-size:10.6px; color:#d6ded6; line-height:1.62; margin-bottom:6px; }
+  .a p { font-size:10.6px; color:#2b3a31; line-height:1.62; margin-bottom:6px; }
   .a p:last-child { margin-bottom:0; }
   .by { font-size:9.2px; letter-spacing:0.6px; text-transform:uppercase; color:var(--muted); font-weight:700; margin-top:9px; display:flex; align-items:center; gap:7px; }
   .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
-  .foot { margin-top:22px; padding-top:12px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:9.5px; color:var(--muted); }
-  .foot b { font-family:Georgia,serif; color:var(--cream); font-weight:700; }
+  .foot { margin-top:22px; padding-top:12px; border-top:2px solid var(--ink); display:flex; justify-content:space-between; align-items:center; font-size:9.5px; color:var(--muted); }
+  .foot b { font-family:Georgia,serif; color:var(--ink); font-weight:700; }
   .foot b i { color:var(--accent); }
 </style></head><body>
   <div class="header">
-    <div class="brand">Connect <span>Waikato</span><span class="tag">Human connection in an AI world</span></div>
+    <div class="brand">Connect <span class="w">Waikato</span><span class="tag">Human connection in an AI world</span></div>
     <div class="top-right"><div class="eyebrow">Audience Q&amp;A</div><div class="ev">From the Slido questions</div></div>
   </div>
   <div class="lead">
@@ -38,122 +37,122 @@
     <div class="qa">
       <div class="q">For a junior data engineer role, which AI skills are essential for candidates?</div>
       <div class="a"><p>The unglamorous truth: get the fundamentals rock solid first. SQL, Python, how data actually moves through a pipeline, and how to model it. AI doesn&#x27;t paper over gaps there, it just makes confident mistakes faster. On top of that I&#x27;d want someone who can use AI as a copilot without switching their brain off: prompt it well, read the code it hands back, and know when it&#x27;s wrong. A working understanding of the LLM side helps too, embeddings, retrieval, calling APIs, and above all keeping data clean, because rubbish in is still rubbish out. The real skill is judgment. The tools change every six months; judgment doesn&#x27;t.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">What other complications that you observed with a your platform solution?</div>
       <div class="a"><p>The platform is very simple to use and has enhanced our ability to communicate, honestly cannot think of any significant complications</p></div>
-      <div class="by"><span class="dot" style="background:#e0b56a"></span>Trent Montgomery · TDM Transport</div>
+      <div class="by"><span class="dot" style="background:#b5842f"></span>Trent Montgomery · TDM Transport</div>
     </div>
     <div class="qa">
       <div class="q">If your AI tools disappeared tomorrow, what part of your business would come to a standstill?</div>
       <div class="a"><p>Ha, the honest answer is quite a lot, and I&#x27;m okay admitting that. I run a team of agents in public every day, so the research, the drafting and the first-pass build work would slow right down. But here&#x27;s the thing: nothing would truly stop. The judgment still lives with people, and the agents are the muscle, not the brain. It&#x27;d be like losing half the team overnight. Painful and slower, but the business would still know exactly what it&#x27;s trying to do. That&#x27;s the real test, actually. If losing your AI would genuinely kill the business, you&#x27;ve handed over too much of the judgment. Keep the thinking with the humans and you stay resilient.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">As AI needs more and more context, how do you stop it from picking up incorrect context, or context it shouldn&#x27;t be listening to?</div>
       <div class="a"><p>This is the whole game, honestly. My rule is simple: treat context the way you&#x27;d treat access for a new staff member. You wouldn&#x27;t hand a new hire the keys to everything on day one, and you shouldn&#x27;t hand them to an agent either. So we do three things. One source of truth: if finance and marketing are looking at different numbers, the AI will happily pick the wrong one and sound confident doing it, so fix the data before you point AI at it. Permissioning: the agent only sees what the task actually needs, nothing more. And a human on anything that ships: the AI does the first pass, a person decides what&#x27;s actually true. Garbage context in, confident garbage out, so we spend most of our effort on what it&#x27;s allowed to see, not on clever prompting.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">What is your prediction for AI, and where would you like to see it go?</div>
       <div class="a"><p>Due to geopolitical and other reasons, AI is heading this way:</p><p>AI writing more code, now 80% of code is written by AI at Anthropic Self-recursive improvement is getting faster, and very soon AI will write code to improve AI without human input.</p><p>But improving AI still requires quality data, and we are running dry of human data. The new strategy is training the AI with synthetic data generated by AI. It is called recursively generated data. It can leads to two outcomes:</p><p>Model collapse, because the recursively generated synthetic data leads to highly homogenous prediction, the model quality will get more degraded. We still have human data for GPT 5.7 or 6, but maybe GPT 7 will be trained exclusively on synthetic data, leading to less intelligence.</p><p>Artificial general intelligence (AGI) if data works well. AGI leads to ASI, the rest is hard to predict. It could lead to utopia or dystopia.</p></div>
-      <div class="by"><span class="dot" style="background:#7fb0e8"></span>Benny Pan · InspiraEd</div>
+      <div class="by"><span class="dot" style="background:#2f6fb0"></span>Benny Pan · InspiraEd</div>
     </div>
     <div class="qa">
       <div class="q">What are the risks around Claude and data quality, with learning, de-learning and relearning? Can it become a bit of a black hole if the data quality is bad?</div>
       <div class="a"><p>Two things people tend to mix up here. Claude doesn&#x27;t “learn” from your day-to-day the way a person does. It isn&#x27;t quietly training on your business in the background; what it knows in the moment is whatever context you hand it. So the black-hole risk isn&#x27;t the model slowly rotting, it&#x27;s you feeding it a messy, contradictory pile of documents and getting confident nonsense back. The fix is boring but real: clean, current, single source of truth. If you&#x27;ve got five versions of a policy floating around, retire four. Where bad data really bites is retrieval, because if your knowledge base is full of out-of-date material the AI will surface it as gospel. So treat your data like a garden and keep weeding it. The model quality is rarely your problem. Your data hygiene almost always is.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">My workplace is run by a Luddite who has banned all use of AI and rejected every suggestion of governance, guardrails or pilots. Any advice?</div>
       <div class="a"><p>First up, don&#x27;t go rogue with company data to prove a point. That&#x27;s how you become the cautionary tale. Second, the fear is usually coming from somewhere real: data leaks, quality, or people&#x27;s jobs. Meet that head-on instead of arguing the tech. Don&#x27;t try to sell “AI”; find one small, low-risk, boring job it does well and show a result, not a slide deck. Speak his language: time saved, risk reduced, money. And pick your battles, honestly. Sometimes you plant the seed, do great work, and wait for the ground to thaw. If it never does,</p><p>that tells you something too.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">AI itself is quite invasive. The agent can impersonate you and go wild. What guardrails or security checks can we implement ?</div>
       <div class="a"><p>I assume the question refers to AI impersonate you and communicate with another person without your permission?</p><p>If this is the case, the best guardrail is set the permission with human gates. For example, you can set permission level in Claude Code and Codex such that the agents must ask you for permission before editing local files or calling a tool.</p><p>If you are referring to the the risk of AI being sycophantic, the easiest way to deal with that is to set a global setting, forcing the AI to always speak critically, without considering emotions or political correctness.</p></div>
-      <div class="by"><span class="dot" style="background:#7fb0e8"></span>Benny Pan · InspiraEd</div>
+      <div class="by"><span class="dot" style="background:#2f6fb0"></span>Benny Pan · InspiraEd</div>
     </div>
     <div class="qa">
       <div class="q">Will AI ever be a threat to humans?</div>
       <div class="a"><p>Honest answer: the sci-fi version isn&#x27;t the thing that keeps me up at night. The real risks are nearer and more boring. People trusting confident output they didn&#x27;t check. Jobs changing faster than we retrain for. A handful of companies holding a lot of power. Those are governance and society problems, and they&#x27;re on us to get right. It&#x27;s actually why I build in the open: closed, secret AI is where the scary version lives, and transparent, accountable AI is how we keep it useful. Treat it like any genuinely powerful tool. Huge upside, real responsibility. Respect it, govern it, keep a human accountable. Don&#x27;t fear it, and don&#x27;t worship it either.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">What about the things that AI builds for me? Like an app? Do I own it? Is there a chance I can lose my data within the app or lose access?</div>
       <div class="a"><p>Keep it on GitHub and keep the code private. If you develop an app with AI coding agents, you still own the IP I believe. With GItHub you always owns a carbon copy on your hard drive so you can always sync it to make a few copies on an external HDs to make it extra safe.</p></div>
-      <div class="by"><span class="dot" style="background:#7fb0e8"></span>Benny Pan · InspiraEd</div>
+      <div class="by"><span class="dot" style="background:#2f6fb0"></span>Benny Pan · InspiraEd</div>
     </div>
     <div class="qa">
       <div class="q">Will it blend?</div>
       <div class="a"><p>Ha, love it. Yes, it blends. That&#x27;s kind of the whole point. The magic isn&#x27;t AI off doing its own thing in the corner, it&#x27;s AI blended into how your team already works: same queue, same goals, humans and agents mixed together. The trick is blending it in on purpose, not just tipping it in and hoping. So yes, it blends. Just don&#x27;t put your hand in while it&#x27;s still running.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">I&#x27;m using Fable and finding it very powerful. What guardrails do you suggest I give it to make sure the IP stays mine and isn&#x27;t disseminated?</div>
       <div class="a"><p>Good, Fable&#x27;s a beast, glad it&#x27;s working for you. On IP, a few practical things. Check the plan you&#x27;re on first: the business and enterprise tiers with Claude are set up so your data isn&#x27;t used to train the models, and that&#x27;s the setting that matters, so confirm it in writing rather than assume it. Keep your crown-jewels IP in systems you control and let the AI reach in for a specific task, instead of dumping everything into a chat and losing track of where it went. Write a one-page usage policy so your team knows what&#x27;s okay to paste and what isn&#x27;t, because most leaks are a person, not the model. And log what you&#x27;re doing. Boring governance beats a clever prompt every time. Build in the open with your team, but keep the actual IP permissioned and yours.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">As part of the platform do you GPS the product when in storage, for safety?</div>
       <div class="a"><p>Our current customer base does not require this, however, this is something we have considered for the future</p></div>
-      <div class="by"><span class="dot" style="background:#e0b56a"></span>Trent Montgomery · TDM Transport</div>
+      <div class="by"><span class="dot" style="background:#b5842f"></span>Trent Montgomery · TDM Transport</div>
     </div>
     <div class="qa">
       <div class="q">What&#x27;s been the biggest benefit and the biggest challenge of adopting AI in the workplace, and will AI and humans mainly work together in the future?</div>
       <div class="a"><p>Biggest benefit: speed on the boring stuff. The research, the first drafts, the high-volume work that used to eat a whole Tuesday now gets done while you sleep, and you turn up as the editor. That&#x27;s a genuine gear change. Biggest challenge: it isn&#x27;t the tech, it&#x27;s us.</p><p>The barrier is skill, not software. Learning to delegate, to describe an outcome clearly, to trust but check. That&#x27;s a management muscle and most of us are rusty at it. And yes, the future is humans and agents on the same queue. Agents do the volume, people do the judgment: what matters, and what ships. You don&#x27;t manage one AI, you run a team of them. The people who do well won&#x27;t be the ones with the fanciest tools, they&#x27;ll be the ones who learned to lead a mixed team.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">Will AI outsmart human beings one day?</div>
       <div class="a"><p>Depends what you mean by “smart”. At narrow things it already runs rings around us; it&#x27;ll beat you at chess and churn through code faster than any human alive. But that&#x27;s not the same as wisdom, or judgment, or knowing what actually matters to people. The GPS in the tractor is better than me at driving a dead-straight line, but it isn&#x27;t deciding what to plant, or why. That&#x27;s the bit I care about. My whole talk was about exactly this: the point isn&#x27;t machines out-thinking us, it&#x27;s us staying connected and human while we use them.</p><p>Don&#x27;t fear it, don&#x27;t worship it, and keep a person in the driver&#x27;s seat.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">Were the transport drivers involved in helping to develop the tool? If so, how, and at what stages?</div>
       <div class="a"><p>Our dispatch manager, who has been driving his whole career was heavily involved in the development and testing of the tool and his feedback was pivotal to the development of the tool</p></div>
-      <div class="by"><span class="dot" style="background:#e0b56a"></span>Trent Montgomery · TDM Transport</div>
+      <div class="by"><span class="dot" style="background:#b5842f"></span>Trent Montgomery · TDM Transport</div>
     </div>
     <div class="qa">
       <div class="q">What did you use to make the video game, and could my 12-year-old do that with no AI experience? #schoolholidays</div>
       <div class="a"><p>Love this, do it. For a 12-year-old with zero experience, start with something built for the job: Scratch is brilliant and free, and they&#x27;ll have something playable in an afternoon. From there, Godot or a bit of Python with an AI assistant helping write the code is a great next step. For mine, I leaned on AI heavily to do the grunt-work coding while I steered, which is honestly the same way your kid can learn now: describe what you want, let the AI draft it, then work out why it broke. That last bit, the fixing, is where the real learning happens. Best school-holiday project going. Sorry I missed getting you an answer these school holidays just gone, but happy to point you at a couple of links for the next ones! Just reach out to me.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">How to find a job nowadays, any advice thanks</div>
       <div class="a"><p>Many people write their job applications with AI. Employers check AI-generated applications with AI. That means having the personal relationship has become even more important. I don&#x27;t have the perfect answer.</p><p>But going out and network, volunteer for community projects and just showing up in person is very important.</p></div>
-      <div class="by"><span class="dot" style="background:#7fb0e8"></span>Benny Pan · InspiraEd</div>
+      <div class="by"><span class="dot" style="background:#2f6fb0"></span>Benny Pan · InspiraEd</div>
     </div>
     <div class="qa">
       <div class="q">When will new businesses start implementing agents and AI instead of traditional ERP systems?</div>
       <div class="a"><p>It&#x27;s already starting, but I&#x27;d be careful reading it as “agents replace the ERP”. You still need a solid system of record, one source of truth for your money, stock and customers, and that&#x27;s what an ERP is. What&#x27;s changing is that new businesses are building lighter: a few good tools stitched together with agents doing the workflow on top, instead of one giant system running the whole show. So for now, think agents around and on top of your core systems, automating the busywork, rather than instead of them.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">What is the safest AI tool for a start-up&#x27;s business planning, from a privacy and legal perspective?</div>
       <div class="a"><p>There&#x27;s no single “safest” tool; there&#x27;s a safe way to set one up. The thing that matters most is the plan you&#x27;re on. Business and enterprise tiers (Claude, ChatGPT Enterprise, Copilot inside your own Microsoft tenant) are built so your data isn&#x27;t used to train the models, and you get a proper data-processing agreement. The free consumer versions are where people get burned. So pick a reputable provider, get on a paid business tier, read the terms once (or get someone to), and keep your genuinely sensitive legal material with your actual lawyer. The tool is only ever as private as the account you run it through.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">How do I know the data I provide the AI is safe? How do I keep my client information confidential?</div>
       <div class="a"><p>Data safety comes in a few forms:</p><p>Data sovereignty</p><p>Data residency</p><p>Data privacy</p><p>The only safe option for all three aspects is local AI which is getting more intelligent and smaller. LM Studio is a good start. If you want more customization, Ollama is a good option for more technical people.</p><p>For proprietary AI such as ChatGPT and Copilot, the rule of thumb is NOT to use the free version for any business activity because all data is used for training. The Business and Enterprise license do not permit data used for training. How long they keep the data depends on the license and the admin setting.</p></div>
-      <div class="by"><span class="dot" style="background:#7fb0e8"></span>Benny Pan · InspiraEd</div>
+      <div class="by"><span class="dot" style="background:#2f6fb0"></span>Benny Pan · InspiraEd</div>
     </div>
     <div class="qa">
       <div class="q">What would you recommend to the public sector about how fast they should implement AI?</div>
       <div class="a"><p>Deliberately, not recklessly, and the order matters. The public sector carries a duty most businesses don&#x27;t: fairness, privacy, and being accountable to everyone, not just customers. So move quickly on the low-stakes back-office stuff, drafting, summarising, cutting admin, because that frees people up and builds confidence. Move slowly and carefully anywhere a decision affects someone&#x27;s rights, money, or access to a service, and never hand those fully to a machine without a human accountable for the outcome. Strong governance, real pilots, and be honest with the public about where and how you&#x27;re using it. Trust is the whole currency there, and it&#x27;s</p><p>hard-won and easily lost.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">With sensitive freight, communication needs to be secure. How does AI assist in creating or supporting secure communication?</div>
       <div class="a"><p>Good question, and the honest first answer is that AI doesn&#x27;t replace the boring fundamentals: encryption, access controls, and people who don&#x27;t click dodgy links. That&#x27;s your fence and your gate, and no clever tool fixes a gate someone&#x27;s left open. Where AI genuinely helps is around the edges: spotting phishing and dodgy attachments before anyone opens them, flagging when sensitive info is about to go to the wrong place, redacting details automatically, and keeping an eye on your logs for odd behaviour. Think of it as a very alert farm dog. It doesn&#x27;t build the fence, but it barks early. Get the basics right first, then let AI watch your back.</p></div>
-      <div class="by"><span class="dot" style="background:#5ad2aa"></span>Nick Foley · Longcloud</div>
+      <div class="by"><span class="dot" style="background:#1a8a5f"></span>Nick Foley · Longcloud</div>
     </div>
     <div class="qa">
       <div class="q">If there is no work for juniors and companies are not staying within budget for AI, will companies hire juniors? I’m currently seeing this trend.</div>
       <div class="a"><p>The answer is unfortunately disappointing. Effective use of AI requires domain expertise. The senior experienced people use AI, so they don&#x27;t need as many junior workers as before. This is particularly true in AI-exposed sectors (e.g. tech, finance, legals and heavy knowledge based work). I know it can be scary for many people, but learning new skills has never been easier and cheaper than before with AI. Because AI is progressing very very fast, even those with a job has to embark on regular life-long learning. When you have the spare time, learn a new skill each week, apply the skill to help solve problem, build your portfolio.</p></div>
-      <div class="by"><span class="dot" style="background:#7fb0e8"></span>Benny Pan · InspiraEd</div>
+      <div class="by"><span class="dot" style="background:#2f6fb0"></span>Benny Pan · InspiraEd</div>
     </div>
 
   <div class="foot"><div><b>Connect <i>Waikato</i></b></div><div>Keeping people at the centre.</div></div>
